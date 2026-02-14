@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 150);
+            $table->text('description');
+            $table->string('image', 255)->nullable();
+            $table->tinyInteger('level')->unsigned()->nullable();
+            $table->smallInteger('attack')->unsigned()->nullable();
+            $table->smallInteger('defense')->unsigned()->nullable();
+            $table->foreignId('type_id')->constrained('types')->onUpdate('cascade')->onDelete('restrict');
             $table->timestamps();
         });
     }
