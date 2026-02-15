@@ -17,4 +17,9 @@ class Card extends Model
     {
         return $this->belongsTo(\App\Models\Type::class);
     }
+
+    public function getImageAttribute($value)
+    {
+        return $value ? asset('storage/cards/' . $value) : null;
+    }
 }

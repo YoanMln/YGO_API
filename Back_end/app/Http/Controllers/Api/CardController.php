@@ -25,9 +25,15 @@ class CardController extends Controller
             'name' => 'required|string',
             'description' => 'required',
             'type_id' => 'required|exists:types,id',
+            'image' => 'nullable|image|max:2048'
         ]);
 
-        return Card::create($validated);
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('cards', 'public');
+            $validated['image'] = $path;
+        }
+
+        return Card::create($validated)->load('type');
     }
 
     /**
@@ -49,7 +55,14 @@ class CardController extends Controller
             'name' => 'string',
             'description' => 'string',
             'type_id' => 'exists:types,id',
+            'image' => 'nullable|image|max:2048'
         ]);
+
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('cards', 'public');
+            $validated['image'] = $path;
+        }
+    
 
         $card->update($validated);
         return $card->load('type');
