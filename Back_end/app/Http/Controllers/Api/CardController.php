@@ -25,7 +25,8 @@ class CardController extends Controller
             'name' => 'required|string',
             'description' => 'required',
             'type_id' => 'required|exists:types,id',
-            'image' => 'nullable|image|max:2048'
+            'image' => 'nullable|image|max:2048',
+            'attribute' => 'required|string',
         ]);
 
         if ($request->hasFile('image')) {
@@ -62,7 +63,7 @@ class CardController extends Controller
             $path = $request->file('image')->store('cards', 'public');
             $validated['image'] = $path;
         }
-    
+
 
         $card->update($validated);
         return $card->load('type');

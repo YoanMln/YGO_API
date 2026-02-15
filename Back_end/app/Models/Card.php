@@ -11,6 +11,7 @@ class Card extends Model
         'name',
         'description',
         'type_id',
+        'attribute',
     ];
 
     public function type()
