@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\Card;
 
 class CardSeeder extends Seeder
 {
@@ -13,7 +13,7 @@ class CardSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('cards')->insert([
+        $cards = [
             [
                 'name' => 'Dragon Blanc Aux Yeux Bleus',
                 'image' => 'blue_eyes.jpg',
@@ -22,8 +22,7 @@ class CardSeeder extends Seeder
                 'attack' => 3000,
                 'defense' => 2500,
                 'type_id' => 1, // Monster
-                'created_at' => now(),
-                'updated_at' => now()
+
             ],
             [
                 'name' => 'Trou Noir',
@@ -33,8 +32,7 @@ class CardSeeder extends Seeder
                 'attack' => null,
                 'defense' => null,
                 'type_id' => 2, // Spell
-                'created_at' => now(),
-                'updated_at' => now()
+
             ],
             [
                 'name' => 'Force de Miroir',
@@ -44,9 +42,17 @@ class CardSeeder extends Seeder
                 'attack' => null,
                 'defense' => null,
                 'type_id' => 3, // Trap
-                'created_at' => now(),
-                'updated_at' => now()
+
             ],
-        ]);
+        ];
+        foreach ($cards as $card) {
+            Card::firstOrCreate(
+                ['name' => $card['name']],
+                array_merge($card, [
+                    'created_at' => now(),
+                    'updated_at' => now()
+                ])
+            );
+        }
     }
 }
