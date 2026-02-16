@@ -29,4 +29,9 @@ class Card extends Model
     {
         return $this->belongsTo(Attribute::class);
     }
+
+    public function monsterType()
+    {
+        return $this->belongsTo(MonsterType::class);
+    }
 }
