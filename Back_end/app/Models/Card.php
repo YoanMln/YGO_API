@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Attribute;
 use Illuminate\Database\Eloquent\Model;
 
 class Card extends Model
@@ -22,5 +23,10 @@ class Card extends Model
     public function getImageAttribute($value)
     {
         return $value ? asset('storage/cards/' . $value) : null;
+    }
+
+    public function attribute()
+    {
+        return $this->belongsTo(Attribute::class);
     }
 }
