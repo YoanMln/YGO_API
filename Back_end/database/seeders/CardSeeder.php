@@ -17,6 +17,7 @@ class CardSeeder extends Seeder
             [
                 'name' => 'Dragon Blanc Aux Yeux Bleus',
                 'image' => 'blue_eyes.jpg',
+                'monster_type_id' => '2',
                 'description' => 'Ce dragon légendaire est un puissant moteur de destruction. Rares sont ceux qui ont survécu à cette terrifiante créature quasiment invincible pour en parler.',
                 'level' => 8,
                 'attack' => 3000,
@@ -46,7 +47,7 @@ class CardSeeder extends Seeder
             ],
         ];
         foreach ($cards as $card) {
-            Card::firstOrCreate(
+            Card::updateOrCreate(
                 ['name' => $card['name']],
                 array_merge($card, [
                     'created_at' => now(),

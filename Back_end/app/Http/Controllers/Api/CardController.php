@@ -13,7 +13,7 @@ class CardController extends Controller
      */
     public function index()
     {
-        return Card::with('type')->get();
+        return Card::with('type', 'monsterType')->get();
     }
 
     /**

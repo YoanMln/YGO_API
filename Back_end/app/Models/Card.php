@@ -32,6 +32,6 @@ class Card extends Model
 
     public function monsterType()
     {
-        return $this->belongsTo(MonsterType::class);
+        return $this->belongsTo(MonsterType::class, 'monster_type_id');
     }
 }
