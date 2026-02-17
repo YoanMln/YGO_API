@@ -23,6 +23,7 @@ class CardSeeder extends Seeder
                 'attack' => 3000,
                 'defense' => 2500,
                 'type_id' => 1, // Monster
+                'monster_primary_type_id' => 1, // Normal
 
             ],
             [
