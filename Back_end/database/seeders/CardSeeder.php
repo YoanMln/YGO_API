@@ -46,6 +46,21 @@ class CardSeeder extends Seeder
                 'type_id' => 3, // Trap
 
             ],
+            [
+                'name' => 'Dieu Égyptien Slime',
+                'image' => 'egyptian_god_slime.jpg',
+                'description' => '1 monstre Aqua + 1 monstre EAU de Niveau 10
+                Doit dabord être soit Invoquée par Fusion, soit Invoquée Spécialement depuis votre Extra Deck en Sacrifiant 1 monstre Aqua de Niveau 10 avec 0 ATK. 
+                Cette carte peut être traitée comme 1 ou 3 Sacrifices pour lInvocation Sacrifice dun monstre. Non destructible au combat. Les monstres de votre adversaire ne peuvent pas cibler avec une attaque, et votre adversaire ne peut pas cibler avec des effets de carte, les monstres que vous contrôlez ("Dieu Égyptien Slime" exclu).',
+                'level' => 10,
+                'attack' => 3000,
+                'defense' => 3000,
+                'type_id' => 1,
+                'monster_type_id' => 15, // Aqua
+                'monster_primary_type_id' => 2,
+                'monster_secondary_type_id' => 2, // Fusion
+
+            ],
         ];
         foreach ($cards as $card) {
             Card::updateOrCreate(
