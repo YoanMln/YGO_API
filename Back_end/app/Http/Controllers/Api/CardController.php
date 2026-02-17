@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Card;
+use App\Models\MonsterSecondaryType;
 
 class CardController extends Controller
 {
@@ -13,7 +14,7 @@ class CardController extends Controller
      */
     public function index()
     {
-        return Card::with('type', 'monsterType', 'monsterPrimaryType')->get();
+        return Card::with('type', 'monsterType', 'monsterPrimaryType', 'MonsterSecondaryType')->get();
     }
 
     /**

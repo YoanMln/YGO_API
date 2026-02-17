@@ -17,9 +17,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             TypeSeeder::class,
-            CardSeeder::class,
             AttributeSeeder::class,
             MonsterTypeSeeder::class,
+            MonsterPrimaryTypeSeeder::class,
+            MonsterSecondaryTypeSeeder::class,
+            CardSeeder::class,
         ]);
     }
 }
