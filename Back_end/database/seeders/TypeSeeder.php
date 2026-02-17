@@ -15,7 +15,7 @@ class TypeSeeder extends Seeder
      */
     public function run(): void
     {
-        $types = ['Monster', 'Spell', 'Trap'];
+        $types = ['Monstre', 'Magie', 'Piège'];
 
         foreach ($types as $type) {
             Type::firstOrCreate([
