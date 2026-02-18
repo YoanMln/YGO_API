@@ -47,4 +47,9 @@ class Card extends Model
     {
         return $this->belongsTo(MonsterSecondaryType::class, 'monster_secondary_type_id');
     }
+
+    public function monsterTertiaryType()
+    {
+        return $this->belongsTo(MonsterTertiaryType::class, 'monster_tertiary_type_id');
+    }
 }

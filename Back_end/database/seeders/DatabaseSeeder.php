@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             MonsterTypeSeeder::class,
             MonsterPrimaryTypeSeeder::class,
             MonsterSecondaryTypeSeeder::class,
+            MonsterTertiaryTypeSeeder::class,
             CardSeeder::class,
         ]);
     }

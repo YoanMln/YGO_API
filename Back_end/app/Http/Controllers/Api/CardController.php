@@ -14,7 +14,7 @@ class CardController extends Controller
      */
     public function index()
     {
-        return Card::with('type', 'monsterType', 'monsterPrimaryType', 'MonsterSecondaryType')->get();
+        return Card::with('type', 'monsterType', 'monsterPrimaryType', 'MonsterSecondaryType', 'MonsterTertiaryType')->get();
     }
 
     /**
