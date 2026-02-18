@@ -61,6 +61,22 @@ class CardSeeder extends Seeder
                 'monster_secondary_type_id' => 2, // Fusion
 
             ],
+            [
+                'name' => 'Le Dragon Ailé De Râ',
+                'image' => 'winged_dragon_of_ra.jpg',
+                'description' => 'Non Invocable Spécialement. Nécessite 3 Sacrifices pour son Invocation Normale (non Posable Normalement). 
+                L Invocation Normale de cette carte ne peut pas être annulée. 
+                Lorsqu elle est Invoquée Normalement, les autres cartes et effets ne peuvent pas être activés. 
+                Lorsque cette carte est Invoquée Normalement : vous pouvez payer des LP jusquà n en avoir plus que 100 ; cette carte gagne une ATK/DEF égales au montant des LP payés. 
+                Vous pouvez payer 1000 LP, puis ciblez 1 monstre sur le Terrain ; détruisez la cible.',
+                'level' => 10,
+                'attack' => null,
+                'defense' => null,
+                'type_id' => 1,
+                'monster_type_id' => 22, // Divin
+                'monster_primary_type_id' => 2,
+
+            ],
         ];
         foreach ($cards as $card) {
             Card::updateOrCreate(
