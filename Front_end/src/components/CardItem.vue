@@ -7,13 +7,32 @@ defineProps({
   card: Object,
 });
 
-const getCardColor = (type) => {
-  return cardColors[type?.name] ?? "#cccccc";
+const getCardColor = (card) => {
+  if (!card?.type?.name) return "#cccccc";
+  if (card.type.name === "Magie") {
+    return cardColors["Magie"];
+  }
+  if (card.type.name === "Piège") {
+    return cardColors["Piège"];
+  }
+  if (card.type.name === "Monstre") {
+    if (card.monster_secondary_type?.name === "Fusion") {
+      return cardColors["Fusion"];
+    }
+
+    if (card.monster_primary_type?.name === "Effet") {
+      return cardColors["Effet"];
+    }
+
+    return cardColors["Monstre"];
+  }
+
+  return "#cccccc";
 };
 </script>
 
 <template>
-  <div class="card" :style="{ '--card-bg': getCardColor(card.type) }">
+  <div class="card" :style="{ '--card-bg': getCardColor(card) }">
     <div class="container-img">
       <img
         class="card-img"
