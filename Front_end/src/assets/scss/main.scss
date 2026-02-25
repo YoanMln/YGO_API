@@ -1,6 +1,6 @@
 // ABSTRACT //
 
-@import "./abstract/mixins";
+@import "./abstracts/mixins";
 
 // VIEWS //
 
@@ -8,9 +8,7 @@
 
 // COMPONENTS //
 
-@import "./components/cardInfo";
-@import "./components/cardStats";
-@import "./components/cardItem";
+
 @import "./components/button";
 
 // BASE //

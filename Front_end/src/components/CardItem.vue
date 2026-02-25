@@ -59,3 +59,28 @@ const toggleDescription = () => {
     </div>
   </div>
 </template>
+
+<style scoped lang="scss">
+@use "@/assets/scss/abstracts/_mixins.scss" as *;
+.card-img {
+  width: 200px;
+}
+
+.card {
+  width: 480px;
+  height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 2rem;
+  @include card-effect;
+
+  &:hover {
+    .card-img {
+      transform: scale(1.1);
+      transition: 0.3s;
+    }
+  }
+}
+</style>
