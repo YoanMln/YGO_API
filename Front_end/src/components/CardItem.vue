@@ -2,6 +2,7 @@
 import CardInfos from "./CardInfos.vue";
 import CardStats from "./CardStats.vue";
 import { cardColors } from "@/utils/cardColors";
+import { ref } from "vue";
 
 defineProps({
   card: Object,
@@ -29,6 +30,11 @@ const getCardColor = (card) => {
 
   return "#cccccc";
 };
+
+const showDescription = ref(false);
+const toggleDescription = () => {
+  showDescription.value = !showDescription.value;
+};
 </script>
 
 <template>
@@ -46,7 +52,10 @@ const getCardColor = (card) => {
 
       <CardStats :card="card" />
 
-      <p class="container-description">Descritpion : {{ card.description }}</p>
+      <button @click="toggleDescription">description</button>
+      <p v-if="showDescription" class="container-description">
+        {{ card.description }}
+      </p>
     </div>
   </div>
 </template>
