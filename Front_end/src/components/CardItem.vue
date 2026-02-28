@@ -62,13 +62,21 @@ const toggleDescription = () => {
 
 <style scoped lang="scss">
 @use "@/assets/scss/abstracts/_mixins.scss" as *;
+
+.container-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .card-img {
   width: 200px;
 }
 
 .card {
-  width: 480px;
-  height: 500px;
+  width: 100%;
+  max-width: 530px;
+  min-height: 550px;
   display: flex;
   justify-content: space-between;
   align-items: center;
