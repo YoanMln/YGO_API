@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Attribute;
+use App\Models\Attribute;
 use Illuminate\Database\Eloquent\Model;
 
 class Card extends Model
@@ -12,7 +12,7 @@ class Card extends Model
         'name',
         'description',
         'type_id',
-        'attribute',
+        'attribute_id',
         'monster_type_id',
         'monster_primary_type_id',
         'monster_secondary_type_id'

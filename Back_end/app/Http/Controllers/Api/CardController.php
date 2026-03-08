@@ -14,7 +14,7 @@ class CardController extends Controller
      */
     public function index()
     {
-        return Card::with('type', 'monsterType', 'monsterPrimaryType', 'MonsterSecondaryType', 'MonsterTertiaryType')->get();
+        return Card::with('type', 'attribute', 'monsterType', 'monsterPrimaryType', 'monsterSecondaryType', 'monsterTertiaryType')->get();
     }
 
     /**
@@ -27,7 +27,7 @@ class CardController extends Controller
             'description' => 'required',
             'type_id' => 'required|exists:types,id',
             'image' => 'nullable|image|max:2048',
-            'attribute' => 'required|string',
+            'attribute_id' => 'required|string',
         ]);
 
         if ($request->hasFile('image')) {
