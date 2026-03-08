@@ -4,4 +4,6 @@ export const cardColors = {
   Magie: "#58927f",
   Piège: "#9f4d6d",
   Fusion: "#6e678f",
+  Xyz: "#44444e",
+  Lien: "#5a9cb5",
 };

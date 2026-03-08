@@ -20,6 +20,13 @@ const getCardColor = (card) => {
     if (card.monster_secondary_type?.name === "Fusion") {
       return cardColors["Fusion"];
     }
+    if (card.monster_secondary_type?.name === "Xyz") {
+      return cardColors["Xyz"];
+    }
+    if (card.monster_secondary_type?.name === "Lien") {
+      return cardColors["Lien"];
+    }
+
 
     if (card.monster_primary_type?.name === "Effet") {
       return cardColors["Effet"];
@@ -64,9 +71,9 @@ const toggleDescription = () => {
 @use "@/assets/scss/abstracts/_mixins.scss" as *;
 
 .container-infos {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .card-img {
