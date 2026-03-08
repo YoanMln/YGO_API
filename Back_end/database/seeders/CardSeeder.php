@@ -77,6 +77,38 @@ class CardSeeder extends Seeder
                 'monster_primary_type_id' => 2,
 
             ],
+            [
+                'name' => 'Cyber Dragon Infini',
+                'image' => 'cyber_dragon_infinity.jpg',
+                'description' => '3 monstres LUMIÈRE Machine de Niveau 6 Une fois par tour, vous pouvez aussi Invoquer par Xyz "Cyber Dragon Infini" en utilisant "Cyber Dragon Nova" que vous contrôlez comme Matériel. 
+                (Transférez ses Matériels à cette carte.) Gagne 200 ATK pour chaque Matériel qui lui est attaché. 
+                Une fois par tour : vous pouvez cibler 1 monstre en Position d Attaque face recto sur le Terrain ; attachez-le à cette carte comme Matériel. 
+                Une fois par tour, lorsqu une carte ou un effet est activé (Effet Rapide) : vous pouvez détacher 1 Matériel de cette carte ; annulez l activation, et si vous le faites, détruisez-la.',
+                'level' => 6,
+                'attack' => 2100,
+                'defense' => 1600,
+                'type_id' => 1,
+                'monster_type_id' => 20,
+                'monster_primary_type_id' => 2,
+                'monster_secondary_type_id' => 4,
+            ],
+            [
+                'name' => 'Cyber Dragon Sieger',
+                'image' => 'cyber_dragon_sieger.jpg',
+                'description' => '2 monstres Machine ("Cyber Dragon" inclus) Le nom de cette carte devient "Cyber Dragon" tant qu elle est sur le Terrain ou dans le Cimetière.
+                Durant chaque Battle Phase, si cette carte n a pas déclaré d attaque (Effet Rapide) : vous pouvez cibler 1 monstre Machine que vous contrôlez avec min. 2100 ATK ; 
+                le reste de ce tour, le monstre gagne 2100 ATK/DEF, et aussi, aucun joueur ne reçoit de dommages de combat d attaques impliquant ce monstre. 
+                Vous ne pouvez utiliser cet effet de "Cyber Dragon Sieger" qu une fois par tour.',
+                'level' => null,
+                'attack' => 2100,
+                'defense' => null,
+                'type_id' => 1,
+                'monster_type_id' => 20,
+                'monster_primary_type_id' => 2,
+                'monster_secondary_type_id' => 6,
+                'attribute_id' => 1,
+
+            ],
         ];
         foreach ($cards as $card) {
             Card::updateOrCreate(
