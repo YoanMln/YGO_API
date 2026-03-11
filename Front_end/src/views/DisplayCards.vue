@@ -33,7 +33,88 @@ const cardStore = useCardStore();
     v-model="cardStore.search"
     placeholder="Rechercher une carte..."
   />
+  <div class="container-search-type">
+    <div class="container-input">
+      <label class="radio">
+        <input
+          class="input-type"
+          type="radio"
+          value="Monstre"
+          v-model="cardStore.selectedType"
+        />
+        Monstre
+      </label>
+      <label class="radio">
+        <input
+          class="input-type"
+          type="radio"
+          value="Normal"
+          v-model="cardStore.selectedType"
+        />Monstre Normal
+      </label>
+      <label class="radio">
+        <input
+          class="input-type"
+          type="radio"
+          value="Effet"
+          v-model="cardStore.selectedType"
+        />Monstre à Effet
+      </label>
+      <label class="radio">
+        <input
+          class="input-type"
+          type="radio"
+          value="Fusion"
+          v-model="cardStore.selectedType"
+        />Monstre Fusion
+      </label>
+      <label class="radio">
+        <input
+          class="input-type"
+          type="radio"
+          value="Lien"
+          v-model="cardStore.selectedType"
+        />Monstre Lien
+      </label>
+      <label class="radio">
+        <input
+          class="input-type"
+          type="radio"
+          value="Xyz"
+          v-model="cardStore.selectedType"
+        />Monstre XYZ
+      </label>
+      <label class="radio">
+        <input
+          class="input-type"
+          type="radio"
+          value="Magie"
+          v-model="cardStore.selectedType"
+        />
+        Magie
+      </label>
 
+      <label class="radio">
+        <input
+          class="input-type"
+          type="radio"
+          value="Piège"
+          v-model="cardStore.selectedType"
+        />
+        Piège
+      </label>
+
+      <label class="radio">
+        <input
+          class="input-type"
+          type="radio"
+          value=""
+          v-model="cardStore.selectedType"
+        />
+        Toutes les cartes
+      </label>
+    </div>
+  </div>
   <div v-if="isLoading">Chargement...</div>
   <div v-else-if="error">{{ error }}</div>
 
