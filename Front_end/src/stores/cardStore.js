@@ -13,7 +13,12 @@ export const useCardStore = defineStore("cardStore", () => {
         .includes(search.value.toLowerCase());
 
       const matchType = selectedType.value
-        ? card.type.name === selectedType.value
+        ? [
+            card.monster_primary_type?.name,
+            card.monster_secondary_type?.name,
+            card.monster_tertiary_type?.name,
+            card.type.name,
+          ].includes(selectedType.value)
         : true;
       return matchSearch && matchType;
     });
