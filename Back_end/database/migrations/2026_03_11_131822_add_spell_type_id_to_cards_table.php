@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::table('cards', function (Blueprint $table) {
             $table->foreignId('spell_type_id')
-                  ->nullable()
-                  ->constrained('spell_types')
-                  ->onUpdate('cascade')
-                  ->onDelete('set null');
+                ->nullable()
+                ->constrained('spell_types')
+                ->onUpdate('cascade')
+                ->onDelete('set null');
         });
     }
 
@@ -26,7 +26,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('cards', function (Blueprint $table) {
-            //
+            $table->dropForeign(['spell_type_id']);
+            $table->dropColumn('spell_type_id');
         });
     }
 };
