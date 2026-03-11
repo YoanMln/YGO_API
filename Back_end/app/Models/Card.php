@@ -16,7 +16,8 @@ class Card extends Model
         'monster_type_id',
         'monster_primary_type_id',
         'monster_secondary_type_id',
-        'spell_type_id'
+        'spell_type_id',
+        'trap_type_id'
     ];
 
     public function type()
@@ -56,5 +57,9 @@ class Card extends Model
     public function spellType()
     {
         return $this->belongsTo(SpellType::class, 'spell_type_id');
+    }
+    public function trapType()
+    {
+        return $this->belongsTo(TrapType::class, 'trap_type_id');
     }
 }
