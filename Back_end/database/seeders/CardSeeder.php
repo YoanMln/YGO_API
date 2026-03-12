@@ -33,10 +33,9 @@ EOD,
                 'description' => <<<EOD
 Détruisez tous les monstres sur le Terrain.
 EOD,
-                'level' => null,
-                'attack' => null,
-                'defense' => null,
+
                 'type_id' => 2, // Spell
+                'spell_type_id' => 1,
             ],
             [
                 'name' => 'Force de Miroir',
@@ -44,10 +43,8 @@ EOD,
                 'description' => <<<EOD
 Lorsqu'un monstre de l'adversaire déclare une attaque : détruisez tous les monstres en Position d'Attaque de votre adversaire.
 EOD,
-                'level' => null,
-                'attack' => null,
-                'defense' => null,
                 'type_id' => 3, // Trap
+                'trap_type_id' => 1,
             ],
             [
                 'name' => 'Dieu Égyptien Slime',
@@ -123,11 +120,144 @@ EOD,
                 'description' => <<<EOD
 Vous pouvez envoyer 1 monstre Bête Divine depuis votre main au Cimetière ; ajoutez 1 "Monster Reborn" depuis votre Deck ou Cimetière à votre main. Vous pouvez envoyer cette carte face recto au Cimetière ; ce tour, vous pouvez Invoquer Spécialement "Le Dragon Ailé de Râ" depuis votre Cimetière avec "Monster Reborn", en ignorant ses conditions d'Invocation. Durant la End Phase du tour où cet effet a été activé, vous devez envoyer "Le Dragon Ailé de Râ" que vous contrôlez qui a été Invoqué Spécialement avec "Monster Reborn" au Cimetière. Vous ne pouvez utiliser chaque effet de "Révélation Millénaire" qu'une fois par tour.
 EOD,
-                'level' => null,
-                'attack' => null,
-                'defense' => null,
+
                 'type_id' => 2,
                 'spell_type_id' => 2,
+            ],
+            [
+                'name' => 'Unification du Dieu du Soleil',
+                'image' => 'sun_god_unification.jpg',
+                'description' => <<<EOD
+                Si vous contrôlez un monstre dont le nom d'origine est "Le Dragon Ailé de Râ", vous pouvez activer cette carte le tour où elle a été Posée. Durant la Main Phase : vous pouvez payer des LP jusqu'à n'en avoir plus que 100 ; 1 "Le Dragon Ailé de Râ" Invoqué Spécialement que vous contrôlez gagne une ATK/DEF égales au montant des LP payés (même si cette carte quitte le Terrain). Une fois par tour : vous pouvez Sacrifier 1 "Le Dragon Ailé de Râ" ; gagnez des LP égaux à son ATK sur le Terrain. Vous ne pouvez pas activer les deux effets de cette carte dans la même Chaîne.
+                EOD,
+
+                'type_id' => 3,
+                'trap_type_id' => 2,
+            ],
+            [
+                'name' => 'Chant Ancien',
+                'image' => 'ancient_chant.jpg',
+                'description' => <<<EOD
+                Ajoutez 1 "Le Dragon Ailé de Râ" depuis votre Deck ou Cimetière à votre main, et si vous le faites, vous pouvez Invoquer par Sacrifice 1 monstre durant votre Main Phase ce tour, en plus de votre Invocation/Pose Normale. (Vous ne pouvez gagner cet effet qu'une fois par tour.) Vous pouvez bannir cette carte depuis votre Cimetière : si vous Invoquez par Sacrifice "Le Dragon Ailé de Râ" ce tour, son ATK/DEF d'origine deviennent la somme des ATK/DEF d'origine des monstres Sacrifiés pour son Invocation. Vous ne pouvez activer qu'1 "Chant Ancien" par tour.
+                EOD,
+
+                'type_id' => 2,
+                'spell_type_id' => 1,
+            ],
+            [
+                'name' => 'Le véritable Dieu Du Soleil',
+                'image' => 'the_true_sun_god.jpg',
+                'description' => <<<EOD
+                Lorsque cette carte est activée : ajoutez 1 "Le Dragon Ailé de Râ" ou 1 carte qui le mentionne ("Le Véritable Dieu du Soleil" exclu) depuis votre Deck à votre main. Les monstres ("Le Dragon Ailé de Râ" exclu) ne peuvent pas attaquer le tour où ils sont Invoqués Spécialement. Une fois par tour, durant votre Main Phase : vous pouvez envoyer cette carte depuis le Terrain ou 1 "Le Dragon Ailé de Râ - L'Invincible Phénix" depuis votre Deck au Cimetière, puis envoyez 1 "Le Dragon Ailé de Râ" depuis votre Zone Monstre au Cimetière. Vous ne pouvez activer qu'1 "Le Véritable Dieu du Soleil" par tour.
+                EOD,
+
+                'type_id' => 2,
+                'spell_type_id' => 2
+            ],
+            [
+                'name' => 'Canon De Flammes',
+                'image' => 'blaze_canon.jpg',
+                'description' => <<<EOD
+                (Cette carte est toujours aussi traitée comme une carte "Accélérateur de Flammes".)
+                Jusqu'à la fin de ce tour, un "Le Dragon Ailé de Râ" que vous contrôlez gagne les effets suivants. L'activation et l'effet de cette carte ne peuvent être annulés.
+                ●Cette carte n'est pas affectée par des effets de carte de votre adversaire.
+                ●Lorsqu'une attaque impliquant cette carte est déclarée : vous pouvez Sacrifier un nombre de votre choix d'autres monstres qui n'ont pas déclaré d'attaque ce tour ; jusqu'à la fin de ce tour, cette carte gagne une ATK égale à la somme des ATK d'origine des monstres Sacrifiés.
+                ●Après le calcul des dommages, si cette carte a attaqué : vous pouvez envoyer tous les monstres contrôlés par votre adversaire au Cimetière.
+                EOD,
+                'type_id' => 2,
+                'spell_type_id' => 4
+            ],
+            [
+                'name' => <<<EOD
+                Chaînes D'Entrave Du Dieu
+                EOD,
+                'image' => 'mound_of_the_bound_creator.jpg',
+                'description' => <<<EOD
+                Les monstres de min. Niveau 10 sur le Terrain ne peuvent être ni ciblés ni détruits par des effets de carte. Si un monstre de min.
+                Niveau 10 détruit un monstre au combat et l'envoie au Cimetière : le joueur qui contrôlait le monstre détruit reçoit 1000 points de dommages. 
+                Lorsque cette carte sur le Terrain est détruite par un effet de carte et envoyée au Cimetière : vous pouvez ajouter ı monstre DIVIN depuis votre Deck à votre main.
+                EOD,
+                'type_id' => 2,
+                'spell_type_id' => 3,
+            ],
+            [
+                'name' => "Gardien Slime",
+                'image' => 'guardian_slime.jpg',
+                'description' => <<<EOD
+                Si vous recevez des dommages de combat ou d'effet : vous pouvez Invoquer Spécialement cette carte depuis votre main. 
+                Durant le calcul des dommages, si cette carte combat un monstre de l'adversaire (Effet Rapide) : durant ce calcul des dommages uniquement, vous pouvez faire gagner à cette carte une DEF égale à l'ATK du monstre de l'adversaire. 
+                Si cette carte est envoyée depuis la main ou Terrain au Cimetière : vous pouvez ajouter 1 Magie/Piège depuis votre Deck à votre main, qui liste spécifiquement la carte "Le Dragon Ailé de Râ" dans son texte. Vous ne pouvez utiliser chaque effet de "Gardien Slime" qu'une fois par tour.
+                EOD,
+                'level' => 10,
+                'attack' => 0,
+                'defense' => 0,
+                'type_id' => 1,
+                'monster_type_id' => 15,
+                'monster_primary_type_id' => 2,
+                'attribute_id' => 4,
+
+            ],
+            [
+                'name' => "Réacteur Slime",
+                'image' => 'reactor_slime.jpg',
+                'description' => <<<EOD
+                Durant votre Main Phase : vous pouvez activer cet effet; Invoquez Spécialement 2 "Jeton de Slime" (Aqua/EAU/Niveau 1/ATK 500/DEF 500), et aussi, vous ne pouvez Invoquer ni Normalement ni Spécialement de monstres (monstres Bête Divine exclus) le reste de ce tour. Durant la Battle Phase (Effet Rapide) : vous pouvez Sacrifier cette carte ; Posez 1 "Slime Métallique" depuis votre main, Deck ou Cimetiere. peut etre active ce tour.
+                Vous ne pouvez utiliser chaque effet de "Réacteur Slime" qu'une fois par tour.
+                EOD,
+                'level' => 4,
+                'attack' => 500,
+                'defense' => 500,
+                'type_id' => 1,
+                'monster_type_id' => 15,
+                'monster_primary_type_id' => 2,
+                'attribute_id' => 4,
+            ],
+            [
+                'name' => 'Slime Métallique',
+                'image' => 'metal_reflect_slime.jpg',
+                'description' => <<<EOD
+                Invoquez Spécialement cette carte en Position de Défense comme un Monstre à Effet (Aqua/EAU/Niveau 10/ATK o/DEF 3000). 
+                (Cette carte est toujours aussi un Piège.) Si elle est Invoquée de cette façon, cette carte ne peut pas attaquer.
+                EOD,
+                'type_id' => 3,
+                'trap_type_id' => 2,
+            ],
+            [
+                'name' => <<<EOD
+                Verdict D'Anubis
+                EOD,
+                'image' => 'verdict_of_anubis.jpg',
+                'description' => <<<EOD
+                Lorsque votre adversaire active une Carte Magie/Piège, tant que vous contrôlez min. 3 autres Magies/Pièges : annulez l'activation, et si vous le faites, détruisez la carte, 
+                puis si vous contrôlez "Le Temple des Rois", vous pouvez détruire autant de monstres contrôlés par votre adversaire que possible, 
+                puis infligez des dommages à votre adversaire égaux à la moitié de la somme des ATK d'origine de ces monstres détruits. 
+                Vous ne pouvez activer qu'1 "Verdict d'Anubis" par tour.
+                EOD,
+                'type_id' => 3,
+                'trap_type_id' => 3,
+            ],
+            [
+                'name' => 'Rituel De Magie Noire',
+                'image' => 'black_magic_ritual.jpg',
+                'description' => <<<EOD
+                Cette carte est utilisée pour Invoquer Rituellement "Magicien du Chaos Sombre".
+                Vous devez aussi Sacrifier des monstres depuis votre main ou Terrain dont le Niveau total est égal à min.
+                EOD,
+                'type_id' => 2,
+                'spell_type_id' => 6,
+            ],
+            [
+                'name' => 'Secrets De La Magie Des Ténèbres',
+                'image' => 'secrets_of_dark_magic.jpg',
+                'description' => <<<EOD
+                Activez 1 des effets suivants.
+                • Invoquez par Fusion 1 Monstre Fusion depuis votre Extra Deck, en utilisant des monstres depuis votre main ou Terrain ("Magicien Sombre"
+                'ou "Magicienne des Ténèbres" inclus) comme Matériel Fusion.
+                • Invoquez Rituellement 1 Monstre Rituel depuis votre main, en Sacrifiant des monstres depuis votre main ou Terrain (Magicien Sombre" ou "Magicienne des Ténèbres" inclus) 
+                dont le Niveau total est supérieur ou égal au Niveau du Monstre Rituel.
+                EOD,
+                'type_id' => 2,
+                'spell_type_id' => 4,
             ]
         ];
 
