@@ -29,6 +29,9 @@ export const useCardStore = defineStore("cardStore", () => {
       } else if (selectedType.value === "trap_continue") {
         matchType =
           card.type?.name === "Piège" && card.trap_type?.name === "Continue";
+      } else if (selectedType.value === "counter_trap") {
+        matchType =
+          card.type?.name === "Piège" && card.trap_type?.name === "Contre";
       } else if (selectedType.value) {
         matchType = [
           card.type?.name,
