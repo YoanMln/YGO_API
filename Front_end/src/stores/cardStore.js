@@ -5,9 +5,13 @@ export const useCardStore = defineStore("cardStore", () => {
   const cards = ref([]);
   const search = ref("");
   const selectedType = ref(null);
+  const selectedAttribute = ref(null);
 
   const filteredCards = computed(() => {
     return cards.value.filter((card) => {
+      const matchAttribute = selectedAttribute.value
+        ? card.attribute?.name === selectedAttribute.value
+        : true;
       const matchSearch = card.name
         .toLowerCase()
         .includes(search.value.toLowerCase());
@@ -41,9 +45,22 @@ export const useCardStore = defineStore("cardStore", () => {
         ].includes(selectedType.value);
       }
 
-      return matchSearch && matchType;
+      return matchSearch && matchType && matchAttribute;
     });
   });
 
-  return { cards, search, selectedType, filteredCards };
+  function resetFilters() {
+    selectedType.value = null;
+    selectedAttribute.value = null;
+    search.value = "";
+  }
+
+  return {
+    cards,
+    search,
+    selectedType,
+    selectedAttribute,
+    filteredCards,
+    resetFilters,
+  };
 });
