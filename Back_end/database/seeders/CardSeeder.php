@@ -264,7 +264,124 @@ class CardSeeder extends Seeder
                 EOD,
                 'type_id' => 2,
                 'spell_type_id' => 4,
-            ]
+            ],
+            [
+                'name' => <<<EOD
+                Hâpi, Guide D'Horus
+                EOD,
+                'image' => 'hapi-guidance-of-horus.jpg',
+                'description' => <<<EOD
+                Si vous contrôlez "Sarcophage du Roi", vous pouvez Invoquer Spécialement cette carte (depuis votre Cimetière). 
+                Vous ne pouvez Invoquer Spécialement "Hâpi, Guide d'Horus" qu'une fois par tour de cette façon. 
+                Si une ou plusieurs autres cartes que vous contrôlez quittent le Terrain par un effet de carte de l'adversaire, tant que cette carte est dans votre Zone Monstre 
+                (sauf durant la Damage Step) : vous pouvez cibler 2 cartes qui sont bannies et/ou dans les Cimetières ; soit ajoutez-les toutes les deux à la main, soit mélangez-les toutes les deux dans le Deck. 
+                Vous ne pouvez utiliser cet effet de "Hâpi, Guide d'Horus" qu'une fois par tour.
+                EOD,
+                'type_id' => 1,
+                'monster_type_id' => 5,
+                'monster_primary_type_id' => 2,
+                'level' => 8,
+                'attribute_id' => 5,
+                'attack' => 2400,
+                'defense' => 1600,
+            ],
+            [
+                'name' => <<<EOD
+                Kébehsénouf, Protection D'Horus
+                EOD,
+                'image' => 'qebehsenuef.jpg',
+                'description' => <<<EOD
+                Si vous contrôlez "Sarcophage du Roi", vous pouvez Invoquer Spécialement cette carte (depuis votre Cimetière). 
+                Vous ne pouvez Invoquer Spécialement "Kébehsénouf, Protection d'Horus" qu'une fois par tour de cette façon. 
+                Si une ou plusieurs autres cartes que vous contrôlez quittent le Terrain par un effet de carte de l'adversaire, 
+                tant que cette carte est dans votre Zone Monstre (sauf durant la Damage Step) : vous pouvez activer cet effet ; 
+                ce tour, les monstres de votre adversaire ne peuvent pas cibler de monstres "Horus" avec une attaque, et aussi, 
+                votre adversaire ne peut pas cibler de monstres "Horus" sur le Terrain avec des effets de carte. Vous ne pouvez utiliser cet effet de "Kébehsénouf, 
+                Protection d'Horus" qu'une fois par tour.
+                EOD,
+                'type_id' => 1,
+                'monster_type_id' => 7,
+                'monster_primary_type_id' => 2,
+                'level' => 8,
+                'attribute_id' => 6,
+                'attack' => 2500,
+                'defense' => 2000,
+            ],
+            [
+                'name' => <<<EOD
+                Hamset, Gloire D'Horus
+                EOD,
+                'image' => 'imsety-glory-of-horus.jpg',
+                'description' => <<<EOD
+                Si vous contrôlez "Sarcophage du Roi", vous pouvez Invoquer Spécialement cette carte (depuis votre Cimetière). 
+                Vous ne pouvez Invoquer Spécialement "Amset, Gloire d'Horus" qu'une fois par tour de cette façon. 
+                Vous ne pouvez utiliser chacun des effets suivants de "Amset, Gloire d'Horus" qu'une fois par tour. 
+                Vous pouvez envoyer 2 cartes (cette carte incluse) depuis votre main au Cimetière ; 
+                ajoutez 1 "Sarcophage du Roi" depuis votre Deck à votre main, puis vous pouvez piocher 1 carte. 
+                Si une ou plusieurs autres cartes que vous contrôlez quittent le Terrain par un effet de carte de l'adversaire, 
+                tant que cette carte est dans votre Zone Monstre (sauf durant la Damage Step) : vous pouvez envoyer 1 carte sur le Terrain au Cimetière.
+                EOD,
+                'type_id' => 1,
+                'monster_type_id' => 1,
+                'monster_primary_type_id' => 2,
+                'level' => 8,
+                'attribute_id' => 2,
+                'attack' => 3000,
+                'defense' => 1800,
+            ],
+            [
+                'name' => 'Horus Divinité De La Flamme Noire',
+                'image' => 'horus-the-black-flame-deity.jpg',
+                'description' => <<<EOD
+                Si vous contrôlez "Sarcophage du Roi" et un monstre "Horus" : vous pouvez révéler cette carte dans votre main, 
+                puis envoyez 1 carte depuis votre main ou Terrain au Cimetière ; envoyez 1 carte sur le Terrain au Cimetière. 
+                Si un ou plusieurs monstres "Horus" face recto que vous contrôlez ("Horus Divinité de la Flamme Noire" exclu) 
+                ou "Sarcophage du Roi" face recto que vous contrôlez quittent le Terrain par un effet de carte de l'adversaire 
+                (sauf durant la Damage Step) : vous pouvez Invoquer Spécialement cette carte depuis votre main, puis vous pouvez 
+                envoyer tous les autres monstres sur le Terrain au Cimetière. Vous ne pouvez utiliser chaque effet de "Horus Divinité de la Flamme Noire" 
+                qu'une fois par tour.
+                EOD,
+                'type_id' => 1,
+                'monster_type_id' => 2,
+                'monster_primary_type_id' => 2,
+                'level' => 8,
+                'attribute_id' => 3,
+                'attack' => 3000,
+                'defense' => 1800,
+            ],
+            [
+                'name' => <<<EOM
+                Douamoutef, Bénédiction d'Horus
+                EOM,
+                'image' => 'duamutef-blessing-of-horus.jpg',
+                'description' => <<<EOM
+                Si vous contrôlez "Sarcophage du Roi", vous pouvez Invoquer Spécialement cette carte (depuis votre Cimetière). 
+                Vous ne pouvez Invoquer Spécialement "Douamoutef, Bénédiction d'Horus" qu'une fois par tour de cette façon. 
+                Gagne 1200 ATK/DEF pour chaque monstre "Horus" que vous contrôlez. Si une ou plusieurs autres cartes que vous 
+                contrôlez quittent le Terrain par un effet de carte de l'adversaire, tant que cette carte est dans votre Zone Monstre 
+                (sauf durant la Damage Step) : vous pouvez piocher un nombre de cartes égal au nombre de monstres de noms différents dans votre Zone Monstre Main. 
+                Vous ne pouvez utiliser cet effet de "Douamoutef, Bénédiction d'Horus" qu'une fois par tour.
+                EOM,
+                'type_id' => 1,
+                'monster_type_id' => 6,
+                'monster_primary_type_id' => 2,
+                'level' => 8,
+                'attribute' => 4,
+                'attack' => 0,
+                'defense' => 0,
+            ],
+            [
+                'name' => 'Sarcophage Du Roi',
+                'image' => 'kings-sarcophagus.jpg',
+                'description' => <<<EOM
+                Les monstres "Horus" que vous contrôlez ne peuvent pas être détruits par des effets de carte qui ne les ciblent pas. 
+                Vous pouvez envoyer 1 carte depuis votre main au Cimetière ; envoyez 1 monstre "Horus" depuis votre Deck au Cimetière. 
+                Vous ne pouvez utiliser cet effet de "Sarcophage du Roi" que max. quatre fois par tour. Une fois par tour, au début de la Damage Step, 
+                si votre monstre "Horus" combat un monstre de l'adversaire : vous pouvez envoyer le monstre de l'adversaire au Cimetière.
+                EOM,
+                'type_id' => 2,
+                'spell_type_id' => 2,
+            ],
         ];
 
         foreach ($cards as $card) {
