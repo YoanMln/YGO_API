@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreCardRequest;
 use Illuminate\Http\Request;
 use App\Models\Card;
 use App\Models\MonsterSecondaryType;
@@ -20,15 +21,9 @@ class CardController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCardRequest $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string',
-            'description' => 'required',
-            'type_id' => 'required|exists:types,id',
-            'image' => 'nullable|image|max:2048',
-            'attribute_id' => 'required|string',
-        ]);
+        $validated = $request->validated();
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('cards', 'public');
