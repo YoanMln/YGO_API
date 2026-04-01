@@ -382,6 +382,21 @@ class CardSeeder extends Seeder
                 'type_id' => 2,
                 'spell_type_id' => 2,
             ],
+            [
+                'name' => 'Dragon Toon Aux Yeux Rouges',
+                'image' => 'red-eyes-toon.jpg',
+                'description' => <<<EOM
+                Ne peut pas attaquer le tour où elle est Invoquée. 
+                Tant que vous contrôlez "Monde des Toons" et que votre adversaire ne contrôle aucun monstre Toon, 
+                cette carte peut attaquer directement votre adversaire. Une fois par tour : vous pouvez Invoquer 
+                Spécialement 1 monstre Toon ("Dragon Toon aux Yeux Rouges" exclu) depuis votre main, en ignorant ses conditions d'Invocation.
+                EOM,
+                'type_id' => 1,
+                'monster_type_id' => 2,
+                'monster_primary_type_id' => 2,
+                'monster_tertiary_type_id' => 2,
+                'attribute_id' => 2,
+            ],
         ];
 
         foreach ($cards as $card) {
