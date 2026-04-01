@@ -20,22 +20,19 @@ export const useCardStore = defineStore("cardStore", () => {
 
       if (selectedType.value === "spell_continue") {
         matchType =
-          card.type?.name === "Magie" && card.spell_type?.name === "Continue";
+          card.type?.name === "Magie" && card.spellType === "Continue";
+        console.log("matchType result:", matchType);
       } else if (selectedType.value === "spell_speed") {
-        matchType =
-          card.type?.name === "Magie" && card.spell_type?.name === "Rapide";
+        matchType = card.type?.name === "Magie" && card.spellType === "Rapide";
       } else if (selectedType.value === "field_spell") {
-        matchType =
-          card.type?.name === "Magie" && card.spell_type?.name === "Terrain";
+        matchType = card.type?.name === "Magie" && card.spellType === "Terrain";
       } else if (selectedType.value === "ritual_spell") {
         matchType =
-          card.type?.name === "Magie" && card.spell_type?.name === "Rituelle";
+          card.type?.name === "Magie" && card.spellType === "Rituelle";
       } else if (selectedType.value === "trap_continue") {
-        matchType =
-          card.type?.name === "Piège" && card.trap_type?.name === "Continue";
+        matchType = card.type?.name === "Piège" && card.trapType === "Continue";
       } else if (selectedType.value === "counter_trap") {
-        matchType =
-          card.type?.name === "Piège" && card.trap_type?.name === "Contre";
+        matchType = card.type?.name === "Piège" && card.trapType === "Contre";
       } else if (selectedType.value) {
         matchType = [
           card.type?.name,
