@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Type;
 
-use function Symfony\Component\Clock\now;
+
 
 class TypeSeeder extends Seeder
 {
