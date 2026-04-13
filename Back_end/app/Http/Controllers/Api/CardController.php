@@ -6,16 +6,114 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCardRequest;
 use Illuminate\Http\Request;
 use App\Models\Card;
-use App\Models\MonsterSecondaryType;
+use App\Http\Resources\CardResources;
 
 class CardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Card::with('type', 'attribute', 'monsterType', 'monsterPrimaryType', 'monsterSecondaryType', 'monsterTertiaryType', 'spellType', 'trapType')->get();
+        $query = Card::with([
+            'type',
+            'attribute',
+            'monsterType',
+            'monsterPrimaryType',
+            'monsterSecondaryType',
+            'monsterTertiaryType',
+            'spellType',
+            'trapType'
+        ]);
+
+
+        if ($request->filled('search')) {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+
+        // ATTRIBUTE //
+        if ($request->filled('attribute')) {
+            $query->whereHas(
+                'attribute',
+                fn($q) =>
+                $q->where('name', $request->attribute)
+            );
+        }
+
+        // TYPE //
+        if ($request->filled('type')) {
+
+            $filters = [
+
+                // MONSTERS //
+                'Normal' => [
+                    'type' => 'Monstre',
+                    'monsterPrimaryType' => 'Normal'
+                ],
+                'Effet' => [
+                    'type' => 'Monstre',
+                    'monsterPrimaryType' => 'Effet'
+                ],
+                'Fusion' => [
+                    'type' => 'Monstre',
+                    'monsterSecondaryType' => 'Fusion'
+                ],
+                'Xyz' => [
+                    'type' => 'Monstre',
+                    'monsterSecondaryType' => 'Xyz'
+                ],
+                'Lien' => [
+                    'type' => 'Monstre',
+                    'monsterSecondaryType' => 'Lien'
+                ],
+
+                // SPELL //
+                'spell_continue' => [
+                    'type' => 'Magie',
+                    'spellType' => 'Continue'
+                ],
+                'spell_speed' => [
+                    'type' => 'Magie',
+                    'spellType' => 'Rapide'
+                ],
+                'field_spell' => [
+                    'type' => 'Magie',
+                    'spellType' => 'Terrain'
+                ],
+                'ritual_spell' => [
+                    'type' => 'Magie',
+                    'spellType' => 'Rituelle'
+                ],
+
+                // TRAP //
+                'trap_continue' => [
+                    'type' => 'Piège',
+                    'trapType' => 'Continue'
+                ],
+                'counter_trap' => [
+                    'type' => 'Piège',
+                    'trapType' => 'Contre'
+                ],
+            ];
+
+            $type = $request->type;
+
+            if (isset($filters[$type])) {
+
+                foreach ($filters[$type] as $relation => $value) {
+
+                    if ($relation === 'type') {
+                        $query->whereHas('type', fn($q) => $q->where('name', $value));
+                    } else {
+                        $query->whereHas($relation, fn($q) => $q->where('name', $value));
+                    }
+                }
+            } else {
+                $query->whereHas('type', fn($q) => $q->where('name', $type));
+            }
+        }
+
+        return CardResources::collection($query->paginate(20));
     }
 
     /**
