@@ -1,5 +1,13 @@
- * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
- }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: 
+  linear-gradient(rgba(7, 7, 7, 0.695), rgba(7, 7, 7, 0.690)),
+  url("@/assets/images/hieroglyphs-bg.webp");
+  min-height: 100vh;
+  padding: 2rem;
+}
